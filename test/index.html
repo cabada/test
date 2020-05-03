@@ -1,0 +1,109 @@
+<html>
+<head>
+
+   <link rel="stylesheet" href="css/stylesheet.css">
+   <script src="js/jquery/jquery-3.4.1.min.js"></script>
+    <meta name="viewport" content="width=device-width">
+   <meta id="indexMeta" name="robots" content="noindex">
+   <meta id="metaDesc">
+   <!-- Facebook Pixel Code -->
+   <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+         if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+         n.queue=[];t=b.createElement(e);t.async=!0;
+         t.src=v;s=b.getElementsByTagName(e)[0];
+         s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2664643830422201');
+      fbq('track', 'PageView');
+   </script>
+   <noscript><img height="1" width="1" style="display:none"
+                  src="https://www.facebook.com/tr?id=2664643830422201&ev=PageView&noscript=1"
+   /></noscript>
+   <!-- End Facebook Pixel Code -->
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165400379-1"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165400379-1');
+   </script>
+
+</head>
+<body>
+<script>
+   fbq('track', 'ViewContent');
+</script>
+   <div id="navbar"></div>
+   <div id="img-cda">
+      <img src="images/cda-interview-guide.jpg" id="image-cda">
+      <div id="white-div"></div>
+
+
+   </div>
+
+   <div id="container">
+
+   </div>
+   <div id="footer">
+      <div id="rights">©2013-2016 BeMo Academic Consulting Inc. All rights reserved. <span class="redText">Disclaimer & Privacy Policy.</span> <span class="redText">Contact Us.</span></div>
+      <div id="footer-imgs">
+         <div><img src="images/facebook.png" id="facebook"/></div>
+         <div><img src="images/twitter.png" id="twitter"/></div>
+      </div>
+   </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+   $(document).ready(function(){
+      $('#navbar').load('nav.php');
+      $("#container").load('index-content.php');
+      if(localStorage.getItem("imageIndex")!==null){
+         image=localStorage.getItem("imageIndex");
+         document.getElementById("image-cda").src = "images/"+image;
+
+      }
+
+
+      if(localStorage.getItem("toggleIndex")=="0"){
+
+         document.getElementById("indexMeta").remove();
+
+
+      }
+      else {
+         g=document.createElement("meta");
+         g.setAttribute("id","indexMeta");
+         g.setAttribute("name","robots");
+         g.setAttribute("content","noindex");
+      }
+
+      if(sessionStorage.getItem("titleIndex")!==null && sessionStorage.getItem("descIndex")!==null ){
+
+
+         title = sessionStorage.getItem("titleIndex");
+         document.title = title;
+         desc = sessionStorage.getItem("descIndex");
+         g=document.getElementById("metaDesc")
+         g.setAttribute("name","description");
+         g.setAttribute("content",desc);
+      }
+
+   });
+
+
+</script>

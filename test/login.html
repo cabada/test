@@ -1,0 +1,53 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/jquery/jquery-3.4.1.min.js"></script>
+
+    <script src="js/Functions.js"></script>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div id="login">
+<div id="navbar"></div>
+
+
+
+    <div id="data">
+        <div><span>User:</span></div>
+        <div><input type="text" placeholder="username..." id="username"></div>
+        <br>
+        <div><span>Password:</span></div>
+        <div><input type="password" placeholder="******" id="password"></div>
+        <br>
+        <div><input type="button" value="Login" id="btn-login"></div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function(){
+        $('#navbar').load('nav.php');
+
+        $("#btn-login").click(function () {
+
+            username =$("#username").val();
+            password =$("#password").val();
+
+            verifyLogin(username,password);
+
+
+        });
+
+
+    });
+
+
+</script>
